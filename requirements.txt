@@ -1,0 +1,6 @@
+# requirements.txt
+faker
+mysql-connector-python
+pandas
+matplotlib
+scikit-learn
