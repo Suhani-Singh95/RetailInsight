@@ -4,3 +4,4 @@ mysql-connector-python
 pandas
 matplotlib
 scikit-learn
+python-dotenv
