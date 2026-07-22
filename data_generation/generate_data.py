@@ -19,6 +19,14 @@ conn = mysql.connector.connect(
 
 cursor = conn.cursor()
 
+# --- Reset existing data before generating a fresh batch ---
+cursor.execute("SET FOREIGN_KEY_CHECKS = 0")
+cursor.execute("TRUNCATE TABLE orders")
+cursor.execute("TRUNCATE TABLE products")
+cursor.execute("TRUNCATE TABLE customers")
+cursor.execute("SET FOREIGN_KEY_CHECKS = 1")
+conn.commit()
+
 # --- Generate customers ---
 cities = ["Delhi", "Mumbai", "Bangalore", "Chennai", "Pune"]
 customer_ids = []
